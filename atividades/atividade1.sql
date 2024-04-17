@@ -1,3 +1,6 @@
+select * from employees;
+select * from departments;
+
 --Atividade Avaliativa 1
 --Laura Pianetti
 
