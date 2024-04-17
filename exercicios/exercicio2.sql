@@ -91,32 +91,43 @@ grant select on projeto    to public;
 --Preencha o banco de dados criado. Apresente todos os comandos DML utilizados.
 
 INSERT INTO Departamento(nome_departamento, numero_departamento, cpf_gerente, data_inicio_gerente) VALUES ('Pesquisa', 5, null, '22-05-1988');
-INSERT INTO Departamento VALUES ('Administração', 4, null,'01-01-1995');
-INSERT INTO Departamento VALUES ('Matriz', 1, null,'19-06-1981');
+INSERT INTO Departamento(nome_departamento, numero_departamento, cpf_gerente, data_inicio_gerente) VALUES ('Administração', 4, null,'01-01-1995');
+INSERT INTO Departamento(nome_departamento, numero_departamento, cpf_gerente, data_inicio_gerente) VALUES ('Matriz', 1, null,'19-06-1981');
 
-UPDATE Departamento SET cpf_gerente = '33344555587' WHERE numero_departamento = 5;
-UPDATE Departamento SET cpf_gerente = '98765432168' WHERE numero_departamento = 4;
-UPDATE Departamento SET cpf_gerente = '88866555576' WHERE numero_departamento = 1;
+select * from departamento;
 
-INSERT INTO Funcionario(primeiro_nome, nome_meio, ultimo_nome, cpf, data_nascimento, endereco, sexo, salario, numero_departamento) VALUES ('João', 'B', 'Silva', '12345678966', '09-01-1965', 'Rua das Flores, 751, São Paulo, SP', 'M', 30000, 5);
-INSERT INTO Funcionario VALUES ('Fernando', 'T', 'Wong', '33344555587', '08-12-1955', 'Rua da Lapa, 34, São Paulo, SP', 'M', 40000, 5);
-INSERT INTO Funcionario VALUES ('Alice', 'J', 'Zelaya', '99988777767', '19-01-1968', 'Rua Souza Lima, 35, Curitiba, PR', 'F', 25000, 4);
+INSERT INTO Funcionario(primeiro_nome, nome_meio, ultimo_nome, cpf, data_nascimento, endereco, sexo, salario, numero_departamento) 
+VALUES ('João', 'B', 'Silva', '12345678966', '09-01-1965', 'Rua das Flores, 751, São Paulo, SP', 'M', 30000, 5);
+INSERT INTO Funcionario(primeiro_nome, nome_meio, ultimo_nome, cpf, data_nascimento, endereco, sexo, salario, numero_departamento) 
+VALUES ('Fernando', 'T', 'Wong', '33344555587', '08-12-1955', 'Rua da Lapa, 34, São Paulo, SP', 'M', 40000, 5);
+INSERT INTO Funcionario(primeiro_nome, nome_meio, ultimo_nome, cpf, data_nascimento, endereco, sexo, salario, numero_departamento)
+VALUES ('Alice', 'J', 'Zelaya', '99988777767', '19-01-1968', 'Rua Souza Lima, 35, Curitiba, PR', 'F', 25000, 4);
+
+select * from funcionario;
 
 INSERT INTO Dependente(cpf_funcionario, nome_dependente, sexo, data_nascimento, parentesco) VALUES ('33344555587', 'Alicia', 'F', '05-04-1986', 'Filha');
-INSERT INTO Dependente VALUES ('33344555587', 'Tiago', 'M', '25-10-1983','Filho');
-insert into Dependente VALUES ('33344555587', 'Janaína', 'F', '03-05-1958', 'Esposa');
+INSERT INTO Dependente(cpf_funcionario, nome_dependente, sexo, data_nascimento, parentesco) VALUES ('33344555587', 'Tiago', 'M', '25-10-1983','Filho');
+insert into Dependente(cpf_funcionario, nome_dependente, sexo, data_nascimento, parentesco) VALUES ('33344555587', 'Janaína', 'F', '03-05-1958', 'Esposa');
+
+select * from dependente;
 
 INSERT INTO Localizacoes_Departamento(numero_departamento, localizacao) VALUES (1, 'São Paulo');
-INSERT INTO Localizacoes_Departamento VALUES (4, 'Mauá');
-INSERT INTO Localizacoes_Departamento VALUES (5, 'Santo André');
+INSERT INTO Localizacoes_Departamento(numero_departamento, localizacao) VALUES (4, 'Mauá');
+INSERT INTO Localizacoes_Departamento(numero_departamento, localizacao) VALUES (5, 'Santo André');
+
+select * from localizacoes_departamento;
 
 DESC Trabalha_Em
 INSERT INTO Projeto(nome_projeto, numero_projeto, local_projeto, numero_departamento) VALUES ('ProdutoX', 1, 'Santo André', 5);
-INSERT INTO Projeto VALUES ('ProdutoY', 2, 'Itu', 5);
-INSERT INTO Projeto VALUES ('ProdutoZ', 3, 'São Paulo', 5);
+INSERT INTO Projeto(nome_projeto, numero_projeto, local_projeto, numero_departamento) VALUES ('ProdutoY', 2, 'Itu', 5);
+INSERT INTO Projeto(nome_projeto, numero_projeto, local_projeto, numero_departamento) VALUES ('ProdutoZ', 3, 'São Paulo', 5);
+
+select * from projeto;
 
 INSERT INTO Trabalha_Em(cpf_funcionario, numero_projeto, horas) VALUES ('12345678966', 1, 32.5);
-INSERT INTO Trabalha_Em VALUES ('12345678966', 2, 7.5);
-INSERT INTO Trabalha_Em VALUES ('66688444476', 3, 40.0);
+INSERT INTO Trabalha_Em(cpf_funcionario, numero_projeto, horas) VALUES ('12345678966', 2, 7.5);
+INSERT INTO Trabalha_Em(cpf_funcionario, numero_projeto, horas) VALUES ('66688444476', 3, 40.0);
+
+select * from trabalha_em;
 
 COMMIT;

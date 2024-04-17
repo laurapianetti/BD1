@@ -32,16 +32,23 @@ INSERT INTO Time VALUES (01, 'Cruzeiro');
 INSERT INTO Time VALUES (02, 'São Paulo');
 INSERT INTO Time VALUES (03, 'Flamengo');
 
+select * from time;
+
 INSERT INTO Jogo VALUES ('11/Abril/2024', 0, 1);
 INSERT INTO Jogo VALUES ('18/Abril/2024', 2, 3);
 INSERT INTO Jogo VALUES ('25/Abril/2024', 2, 1);
+
+select * from jogo;
 
 INSERT INTO Jogador VALUES (12345678900, 'Rafael');
 INSERT INTO Jogador VALUES (65462879324, 'Matheus');
 INSERT INTO Jogador VALUES (32468357950, 'Lucas');
 
+select * from jogador;
+
 --questão 3
 --Adicione as chaves primárias Time.Id e Jogador.Cpf
+
 ALTER TABLE Time 
 add constraint pk_Time primary key (Id);
 
