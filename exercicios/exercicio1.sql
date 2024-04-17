@@ -1,3 +1,5 @@
+select * from employees;
+select * from departments;
 --Exercício 1
 --Laura Pianetti
 
